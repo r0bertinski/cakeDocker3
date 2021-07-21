@@ -1,6 +1,6 @@
 # Intro
 
-This cakePHP **V3.9.10**  dockerized application is just an example based on the  cakePHP official documentation [ CMS tutorial](https://book.cakephp.org/3/en/tutorials-and-examples/cms/tags-and-users.html), feel free to replace the content inside the app folder with your own cakephp aplication code.
+This cakePHP **V3.9.10**  dockerized application is just an example based on the  cakePHP official documentation [ CMS tutorial](https://book.cakephp.org/3/en/tutorials-and-examples/cms/tags-and-users.html), feel free to replace the content inside the app folder with your own cakephp application code.
 
 
 ## IMAGES ##
