@@ -12,6 +12,35 @@ use App\Controller\AppController;
  */
 class ArticlesController extends AppController
 {
+
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['tags']);
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->getParam('action');
+        // The add and tags actions are always allowed to logged in users.
+        if (in_array($action, ['add', 'tags'])) {
+            return true;
+        }
+
+        // All other actions require a slug.
+        $slug = $this->request->getParam('pass.0');
+        if (!$slug) {
+            return false;
+        }
+
+        // Check that the article belongs to the current user.
+        $article = $this->Articles->findBySlug($slug)->first();
+
+        // var_dump($article->user_id . '===' . $user['id']);
+        return $article->user_id === $user['id'];
+    }
+
     /**
      * Index method
      *
@@ -52,6 +81,10 @@ class ArticlesController extends AppController
         $article = $this->Articles->newEntity();
         if ($this->request->is('post')) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
+            
+            // Changed: Set the user_id from the session.
+            $article->user_id = $this->Auth->user('id');
+
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('The article has been saved.'));
 
@@ -75,7 +108,10 @@ class ArticlesController extends AppController
     {
         $article = $this->Articles->findBySlug($slug)->firstOrFail();
         if ($this->request->is(['post', 'put'])) {
-            $this->Articles->patchEntity($article, $this->request->getData());
+            $this->Articles->patchEntity($article, $this->request->getData(), [
+                'accessibleFields' => ['user_id' => false]
+            ]);          
+
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('Your article has been updated.'));
                 return $this->redirect(['action' => 'index']);

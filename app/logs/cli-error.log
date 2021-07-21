@@ -929,3 +929,47 @@ Stack Trace:
 #13 {main}
 
 
+2021-07-21 07:47:24 Error: [PDOException] SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known in /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Driver.php on line 93
+Stack Trace:
+#0 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Driver.php(93): PDO->__construct('mysql:host=mysq...', 'root', 'root', Array)
+#1 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(105): Cake\Database\Driver->_connect('mysql:host=mysq...', Array)
+#2 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(44): Cake\Database\Driver\Mysql->connect()
+#3 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(62): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(51): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(41): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Connection.php(399): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(1096): Cake\Database\Connection->getSchemaCollection()
+#8 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(1050): Bake\Shell\Task\ModelTask->_getAllTables()
+#9 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(1065): Bake\Shell\Task\ModelTask->listAll()
+#10 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ControllerTask.php(257): Bake\Shell\Task\ModelTask->listUnskipped()
+#11 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ControllerTask.php(61): Bake\Shell\Task\ControllerTask->listAll()
+#12 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Console/Shell.php(531): Bake\Shell\Task\ControllerTask->main()
+#13 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Console/Shell.php(524): Cake\Console\Shell->runCommand(Array, false, Array)
+#14 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Console/CommandRunner.php(384): Cake\Console\Shell->runCommand(Array, true)
+#15 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Console/CommandRunner.php(162): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#16 /Users/r0b/server/sandbox/cakeDocker3/app/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#17 {main}
+
+
+Caused by: [PDOException] PDO::__construct(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known in /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Driver.php on line 93
+Stack Trace:
+#0 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Driver.php(93): PDO->__construct('mysql:host=mysq...', 'root', 'root', Array)
+#1 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(105): Cake\Database\Driver->_connect('mysql:host=mysq...', Array)
+#2 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(44): Cake\Database\Driver\Mysql->connect()
+#3 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(62): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(51): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(41): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Database/Connection.php(399): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(1096): Cake\Database\Connection->getSchemaCollection()
+#8 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(1050): Bake\Shell\Task\ModelTask->_getAllTables()
+#9 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(1065): Bake\Shell\Task\ModelTask->listAll()
+#10 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ControllerTask.php(257): Bake\Shell\Task\ModelTask->listUnskipped()
+#11 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/bake/src/Shell/Task/ControllerTask.php(61): Bake\Shell\Task\ControllerTask->listAll()
+#12 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Console/Shell.php(531): Bake\Shell\Task\ControllerTask->main()
+#13 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Console/Shell.php(524): Cake\Console\Shell->runCommand(Array, false, Array)
+#14 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Console/CommandRunner.php(384): Cake\Console\Shell->runCommand(Array, true)
+#15 /Users/r0b/server/sandbox/cakeDocker3/app/vendor/cakephp/cakephp/src/Console/CommandRunner.php(162): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#16 /Users/r0b/server/sandbox/cakeDocker3/app/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#17 {main}
+
+
