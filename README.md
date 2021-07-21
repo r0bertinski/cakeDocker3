@@ -59,7 +59,7 @@ cd app
 composer update
 ```
 
-## posible issues ##
+## possible issues ##
 1. Cache directory not writable
 2. Logs directory not writable
 Add the right permissions to this folders in your host (not need to do inside the container)
