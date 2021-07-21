@@ -1406,3 +1406,71 @@ UNION (SELECT ArticlesTags.article_id AS `ArticlesTags__article_id`, ArticlesTag
             WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'articles_tags' AND rc.TABLE_NAME = 'articles_tags'
 2021-07-21 01:08:49 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'articles_tags'
 2021-07-21 01:08:49 Debug: duration=3 rows=6 SELECT ArticlesTags.article_id AS `Tags_CJoin__article_id`, ArticlesTags.tag_id AS `Tags_CJoin__tag_id`, Tags.id AS `Tags__id`, Tags.title AS `Tags__title`, Tags.created AS `Tags__created`, Tags.modified AS `Tags__modified` FROM tags Tags INNER JOIN articles_tags ArticlesTags ON Tags.id = (ArticlesTags.tag_id) WHERE ArticlesTags.article_id in (5)
+2021-07-21 02:10:59 Debug: duration=7 rows=8 SHOW FULL COLUMNS FROM `articles`
+2021-07-21 02:10:59 Debug: duration=1 rows=3 SHOW INDEXES FROM `articles`
+2021-07-21 02:10:59 Debug: duration=4 rows=1 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'articles' AND rc.TABLE_NAME = 'articles'
+2021-07-21 02:10:59 Debug: duration=1 rows=1 SHOW TABLE STATUS WHERE Name = 'articles'
+2021-07-21 02:10:59 Debug: duration=1 rows=4 SHOW FULL COLUMNS FROM `tags`
+2021-07-21 02:10:59 Debug: duration=0 rows=2 SHOW INDEXES FROM `tags`
+2021-07-21 02:10:59 Debug: duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'tags' AND rc.TABLE_NAME = 'tags'
+2021-07-21 02:10:59 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'tags'
+2021-07-21 02:10:59 Debug: duration=1 rows=1 SELECT Articles.id AS `Articles__id`, Articles.user_id AS `Articles__user_id`, Articles.title AS `Articles__title`, Articles.slug AS `Articles__slug`, Articles.body AS `Articles__body`, Articles.published AS `Articles__published`, Articles.created AS `Articles__created`, Articles.modified AS `Articles__modified` FROM articles Articles WHERE Articles.slug = 'last-update' LIMIT 1
+2021-07-21 02:10:59 Debug: duration=1 rows=2 SHOW FULL COLUMNS FROM `articles_tags`
+2021-07-21 02:10:59 Debug: duration=0 rows=3 SHOW INDEXES FROM `articles_tags`
+2021-07-21 02:10:59 Debug: duration=1 rows=2 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'articles_tags' AND rc.TABLE_NAME = 'articles_tags'
+2021-07-21 02:10:59 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'articles_tags'
+2021-07-21 02:10:59 Debug: duration=1 rows=6 SELECT ArticlesTags.article_id AS `Tags_CJoin__article_id`, ArticlesTags.tag_id AS `Tags_CJoin__tag_id`, Tags.id AS `Tags__id`, Tags.title AS `Tags__title`, Tags.created AS `Tags__created`, Tags.modified AS `Tags__modified` FROM tags Tags INNER JOIN articles_tags ArticlesTags ON Tags.id = (ArticlesTags.tag_id) WHERE ArticlesTags.article_id in (5)
+2021-07-21 02:16:43 Debug: duration=1 rows=8 SHOW FULL COLUMNS FROM `articles`
+2021-07-21 02:16:43 Debug: duration=0 rows=3 SHOW INDEXES FROM `articles`
+2021-07-21 02:16:43 Debug: duration=0 rows=1 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'articles' AND rc.TABLE_NAME = 'articles'
+2021-07-21 02:16:43 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'articles'
+2021-07-21 02:16:43 Debug: duration=1 rows=4 SHOW FULL COLUMNS FROM `tags`
+2021-07-21 02:16:43 Debug: duration=0 rows=2 SHOW INDEXES FROM `tags`
+2021-07-21 02:16:43 Debug: duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'tags' AND rc.TABLE_NAME = 'tags'
+2021-07-21 02:16:43 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'tags'
+2021-07-21 02:16:43 Debug: duration=0 rows=1 SELECT Articles.id AS `Articles__id`, Articles.user_id AS `Articles__user_id`, Articles.title AS `Articles__title`, Articles.slug AS `Articles__slug`, Articles.body AS `Articles__body`, Articles.published AS `Articles__published`, Articles.created AS `Articles__created`, Articles.modified AS `Articles__modified` FROM articles Articles WHERE Articles.slug = 'last-update' LIMIT 1
+2021-07-21 02:16:43 Debug: duration=1 rows=2 SHOW FULL COLUMNS FROM `articles_tags`
+2021-07-21 02:16:43 Debug: duration=0 rows=3 SHOW INDEXES FROM `articles_tags`
+2021-07-21 02:16:43 Debug: duration=0 rows=2 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'articles_tags' AND rc.TABLE_NAME = 'articles_tags'
+2021-07-21 02:16:43 Debug: duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'articles_tags'
+2021-07-21 02:16:43 Debug: duration=0 rows=6 SELECT ArticlesTags.article_id AS `Tags_CJoin__article_id`, ArticlesTags.tag_id AS `Tags_CJoin__tag_id`, Tags.id AS `Tags__id`, Tags.title AS `Tags__title`, Tags.created AS `Tags__created`, Tags.modified AS `Tags__modified` FROM tags Tags INNER JOIN articles_tags ArticlesTags ON Tags.id = (ArticlesTags.tag_id) WHERE ArticlesTags.article_id in (5)
+2021-07-21 02:16:44 Debug: duration=0 rows=1 SELECT Articles.id AS `Articles__id`, Articles.user_id AS `Articles__user_id`, Articles.title AS `Articles__title`, Articles.slug AS `Articles__slug`, Articles.body AS `Articles__body`, Articles.published AS `Articles__published`, Articles.created AS `Articles__created`, Articles.modified AS `Articles__modified` FROM articles Articles WHERE Articles.slug = 'last-update' LIMIT 1
+2021-07-21 02:16:44 Debug: duration=0 rows=6 SELECT ArticlesTags.article_id AS `Tags_CJoin__article_id`, ArticlesTags.tag_id AS `Tags_CJoin__tag_id`, Tags.id AS `Tags__id`, Tags.title AS `Tags__title`, Tags.created AS `Tags__created`, Tags.modified AS `Tags__modified` FROM tags Tags INNER JOIN articles_tags ArticlesTags ON Tags.id = (ArticlesTags.tag_id) WHERE ArticlesTags.article_id in (5)
+2021-07-21 02:16:44 Debug: duration=0 rows=1 SELECT Articles.id AS `Articles__id`, Articles.user_id AS `Articles__user_id`, Articles.title AS `Articles__title`, Articles.slug AS `Articles__slug`, Articles.body AS `Articles__body`, Articles.published AS `Articles__published`, Articles.created AS `Articles__created`, Articles.modified AS `Articles__modified` FROM articles Articles WHERE Articles.slug = 'last-update' LIMIT 1
+2021-07-21 02:16:44 Debug: duration=0 rows=6 SELECT ArticlesTags.article_id AS `Tags_CJoin__article_id`, ArticlesTags.tag_id AS `Tags_CJoin__tag_id`, Tags.id AS `Tags__id`, Tags.title AS `Tags__title`, Tags.created AS `Tags__created`, Tags.modified AS `Tags__modified` FROM tags Tags INNER JOIN articles_tags ArticlesTags ON Tags.id = (ArticlesTags.tag_id) WHERE ArticlesTags.article_id in (5)

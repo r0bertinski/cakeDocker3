@@ -1,7 +1,7 @@
 FROM php:7.3.3-apache
 
 #install all the system dependencies
-RUN apt-get upgrade
+# RUN apt-get upgrade
 RUN apt-get update && apt-get install -y \
   sqlite3 libsqlite3-dev \
   libicu-dev \
