@@ -67,5 +67,7 @@ Add the right permissions to this folders in your host (not need to do inside th
 Example ( **give permissions with careful, this is just an example for development, not for production** )
 ```
 sudo chmod 777 /app/tmp -R
+sudo chmod 777 /app/logs -R
+
 ```
 
