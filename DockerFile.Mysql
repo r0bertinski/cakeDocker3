@@ -1,0 +1,10 @@
+FROM mysql:5.6
+
+# Fix UTF-8 accents in init scripts
+ENV LANG C.UTF-8
+
+
+ADD /db/*.sql /tmp/db.sql
+ADD init_db.sh /tmp/init_db.sh
+RUN /tmp/init_db.sh
+

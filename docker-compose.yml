@@ -1,0 +1,31 @@
+version: "3.1"
+services:
+  cakephp:
+    build: .
+    container_name: cake3-webserver
+    depends_on:
+      - mysql
+    ports:
+      - "8083:80"  
+    volumes:
+      - .:/var/www/html/
+    environment:
+      - HOSTNAME= *cakephp3 sandbox*
+      - WEB_DOCUMENT_ROOT=/var/www/html/app/webroot/
+      - SECURITY_SALT= *some salt here*  
+      - MYSQL_URL=mysql
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=root
+  mysql:
+    build:
+      context: .
+      dockerfile: DockerFile.Mysql
+    image: mysql:5.6
+    container_name: cake3-mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:      
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+volumes:
+  mysql-data:
