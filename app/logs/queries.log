@@ -1592,3 +1592,37 @@ UNION (SELECT ArticlesTags.article_id AS `ArticlesTags__article_id`, ArticlesTag
 2021-07-21 03:57:08 Debug: duration=0 rows=6 SELECT ArticlesTags.article_id AS `Tags_CJoin__article_id`, ArticlesTags.tag_id AS `Tags_CJoin__tag_id`, Tags.id AS `Tags__id`, Tags.title AS `Tags__title`, Tags.created AS `Tags__created`, Tags.modified AS `Tags__modified` FROM tags Tags INNER JOIN articles_tags ArticlesTags ON Tags.id = (ArticlesTags.tag_id) WHERE ArticlesTags.article_id in (5)
 2021-07-21 04:01:02 Debug: duration=1 rows=2 SELECT Articles.id AS `Articles__id`, Articles.user_id AS `Articles__user_id`, Articles.title AS `Articles__title`, Articles.slug AS `Articles__slug`, Articles.body AS `Articles__body`, Articles.published AS `Articles__published`, Articles.created AS `Articles__created`, Articles.modified AS `Articles__modified`, Users.id AS `Users__id`, Users.email AS `Users__email`, Users.password AS `Users__password`, Users.created AS `Users__created`, Users.modified AS `Users__modified` FROM articles Articles INNER JOIN users Users ON Users.id = (Articles.user_id) LIMIT 20 OFFSET 0
 2021-07-21 04:01:02 Debug: duration=0 rows=1 SELECT (COUNT(*)) AS `count` FROM articles Articles INNER JOIN users Users ON Users.id = (Articles.user_id)
+2021-07-21 06:57:18 Debug: duration=56 rows=8 SHOW FULL COLUMNS FROM `articles`
+2021-07-21 06:57:18 Debug: duration=1 rows=3 SHOW INDEXES FROM `articles`
+2021-07-21 06:57:18 Debug: duration=13 rows=1 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'articles' AND rc.TABLE_NAME = 'articles'
+2021-07-21 06:57:18 Debug: duration=2 rows=1 SHOW TABLE STATUS WHERE Name = 'articles'
+2021-07-21 06:57:18 Debug: duration=15 rows=5 SHOW FULL COLUMNS FROM `users`
+2021-07-21 06:57:18 Debug: duration=1 rows=1 SHOW INDEXES FROM `users`
+2021-07-21 06:57:18 Debug: duration=2 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+2021-07-21 06:57:18 Debug: duration=2 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-07-21 06:57:18 Debug: duration=2 rows=1 SELECT Articles.id AS `Articles__id`, Articles.user_id AS `Articles__user_id`, Articles.title AS `Articles__title`, Articles.slug AS `Articles__slug`, Articles.body AS `Articles__body`, Articles.published AS `Articles__published`, Articles.created AS `Articles__created`, Articles.modified AS `Articles__modified`, Users.id AS `Users__id`, Users.email AS `Users__email`, Users.password AS `Users__password`, Users.created AS `Users__created`, Users.modified AS `Users__modified` FROM articles Articles INNER JOIN users Users ON Users.id = (Articles.user_id) LIMIT 20 OFFSET 0
+2021-07-21 06:57:18 Debug: duration=1 rows=1 SELECT (COUNT(*)) AS `count` FROM articles Articles INNER JOIN users Users ON Users.id = (Articles.user_id)
+2021-07-21 06:57:22 Debug: duration=12 rows=4 SHOW FULL COLUMNS FROM `tags`
+2021-07-21 06:57:22 Debug: duration=1 rows=2 SHOW INDEXES FROM `tags`
+2021-07-21 06:57:22 Debug: duration=3 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'cms' AND kcu.TABLE_NAME = 'tags' AND rc.TABLE_NAME = 'tags'
+2021-07-21 06:57:22 Debug: duration=2 rows=1 SHOW TABLE STATUS WHERE Name = 'tags'
+2021-07-21 06:57:22 Debug: duration=0 rows=0 SELECT Tags.id AS `Tags__id`, Tags.title AS `Tags__title` FROM tags Tags LIMIT 200
+2021-07-21 06:57:22 Debug: duration=0 rows=3 SELECT Users.id AS `Users__id` FROM users Users LIMIT 200
