@@ -1,6 +1,6 @@
 # Intro
 
-This cakePHP V3.9.10  dockerized application is just an example, feel free to replace te content inside the app folder with your own code cakephp aplicatinon.
+This cakePHP V3.9.10  dockerized application is just an example, feel free to replace the content inside the app folder with your own cakephp aplicatinon code.
 
 ## IMAGES ##
 ```
@@ -8,7 +8,7 @@ PHP Version 7.3.3 - php:7.3.3-apache
 MYSQL V5.6 - mysql:5.6
 ```
 
-### Enviorment variables .env  ###
+## Enviorment variables .env  ##
 #### Rename env.sample to .env and add your own configuration, db name, ports etc... ####
 ```
 MYSQL_ROOT_PASSWORD=root
