@@ -1,6 +1,6 @@
 # Intro
 
-This cakePHP V3.9.10  dockerized application is just an example based on the  cakePHP official documentation [ CMS tutorial](https://book.cakephp.org/3/en/tutorials-and-examples/cms/tags-and-users.html), feel free to replace the content inside the app folder with your own cakephp aplicatinon code.
+This cakePHP **V3.9.10**  dockerized application is just an example based on the  cakePHP official documentation [ CMS tutorial](https://book.cakephp.org/3/en/tutorials-and-examples/cms/tags-and-users.html), feel free to replace the content inside the app folder with your own cakephp aplicatinon code.
 
 
 ## IMAGES ##
@@ -9,7 +9,7 @@ PHP Version 7.3.3 - php:7.3.3-apache
 MYSQL V5.6 - mysql:5.6
 ```
 
-## Enviorment variables .env  ##
+## Environment variables .env  ##
 #### Rename env.sample to .env and add your own configuration, db name, ports etc... ####
 ```
 MYSQL_ROOT_PASSWORD=root
@@ -53,8 +53,19 @@ TODO: add script to Dockerfile to do this task.
 ```
 docker exec -it cake3-webserver bash
 ```
-### Inside the app container ###
+### Inside the **cake3-webserver** container ###
 ```
 cd app
 composer update
 ```
+
+## posible issues ##
+1. Cache directory not writable
+2. Logs directory not writable
+Add the right permissions to this folders in your host (not need to do inside the container)
+
+Example ( **give permissions with careful, this is just an example for development, not for production** )
+```
+sudo chmod 777 /app/tmp -R
+```
+
