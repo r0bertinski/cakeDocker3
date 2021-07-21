@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'd2ef0280682b6abd71034218f9bd0404227c2dd8',
         'name' => 'cakephp/app',
         'dev' => true,
     ),
@@ -47,12 +47,12 @@
             'dev_requirement' => false,
         ),
         'cakephp/app' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'd2ef0280682b6abd71034218f9bd0404227c2dd8',
             'dev_requirement' => false,
         ),
         'cakephp/bake' => array(
