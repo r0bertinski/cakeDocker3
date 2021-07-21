@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = env('APP_NAME', 'cake3 demo');
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +38,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><a href="/articles"><?= $this->fetch('title') ?></a></h1>
+                <h1><a href="/">Back</a></h1>
             </li>
         </ul>
         <div class="top-bar-section">
