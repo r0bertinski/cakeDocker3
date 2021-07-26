@@ -38,7 +38,10 @@ $cakeDescription = env('APP_NAME', 'cake3 demo');
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><a href="/">Back</a></h1>
+                <a href="/">Back</a>
+            </li>
+            <li class="name">
+                <a href="/users/logout">Logout</a>
             </li>
         </ul>
         <div class="top-bar-section">

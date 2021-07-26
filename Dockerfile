@@ -4,6 +4,8 @@ FROM php:7.4.0-apache
 # RUN apt-get upgrade
 RUN apt-get update && apt-get install -y \
   sqlite3 libsqlite3-dev \
+  nodejs \
+  npm \
   libicu-dev \
   git \
   libpq-dev \
@@ -35,6 +37,11 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Execute the following command to move the composer.phar to a directory that is in your path
 # RUN mv composer.phar /usr/local/bin/composer
+
+### Install cakephp-webpack
+RUN composer require grandfelix/cakephp-webpack
+RUN npm install
+
 
 # # Enable PHP extensions
 RUN docker-php-ext-install pdo_mysql mysqli
