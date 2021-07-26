@@ -1,4 +1,4 @@
-FROM php:7.3.3-apache
+FROM php:7.4.0-apache
 
 #install all the system dependencies
 # RUN apt-get upgrade
@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
   libicu-dev \
   git \
   libpq-dev \
-  mysql-client \
+  mariadb-client \
+  # mysql-client \
   zip \
   unzip \
   vim \
@@ -20,7 +21,8 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
   && docker-php-ext-install \
   intl \
-  mbstring \
+  # oniguruma \
+  # mbstring \
   pcntl \
   pdo_mysql \
   zip \
