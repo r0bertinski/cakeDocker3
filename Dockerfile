@@ -1,4 +1,4 @@
-FROM php:7.4.0-apache
+FROM php:7.2.34-apache
 
 #install all the system dependencies
 # RUN apt-get upgrade
@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
   git \
   libpq-dev \
   mariadb-client \
-  # mysql-client \
   zip \
   unzip \
   vim \

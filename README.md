@@ -5,7 +5,7 @@ This cakePHP **V3.9.10**  dockerized application is just an example based on the
 
 ## IMAGES ##
 ```
-PHP Version 7.4 - php:7.4.0-apache
+PHP Version 7.2.34 - php:7.2.34-apache
 MYSQL V5.6 - mysql:5.6
 ```
 
